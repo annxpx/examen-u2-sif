@@ -1,6 +1,10 @@
 import {writeFileSync, readFileSync, appendFileSync} from "node:fs";
+import categoriesData from './categories.json';
 
-class CategoriesService{
+export const getEntries = () => categoriesData
+export const addEntry = () => null
+
+/*class CategoriesService{
 
      private diccionario= [];
 
@@ -22,4 +26,4 @@ class CategoriesService{
     const fs = require("fs");
     this.diccionario = fs.JSON.parse(writeFileSync(path,data,"utf8"));
     }
-}
+}*/

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "transporte"
+  },
+
+  {
+    "id": 2,
+    "name": "color"
+  }
+  ,
+
+  {
+    "id": 3,
+    "name": "sabor"
+  },
+
+  {
+    "id": 4,
+    "name": "textura"
+  }
+]

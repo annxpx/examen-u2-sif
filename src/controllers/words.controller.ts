@@ -37,8 +37,6 @@ async insertWord(_req: Request, res: Response) : Promise<Response>{
               "Valdation-errors" : errors
           });
       }
-   //   return res.json(
-    //      await insertWord(payload));
     insertWord(_req.body);
   return res.status(204).send("Word inserted");
 }

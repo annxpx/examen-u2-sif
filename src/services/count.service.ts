@@ -11,7 +11,6 @@ import fs from "fs";
                     attempts: attempt.attempts,
                     word: attempt.word,
                     message: attempt.message,
-                    letter: attempt.letter
                 };
             });
         };

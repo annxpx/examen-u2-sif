@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint" : "ts-standard",
+    "lint": "ts-standard",
     "dev": "nodemon ./src/main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,6 +32,8 @@
     "parserOptions": {
       "project": "./tsconfig.json"
     },
-    "extends": ["./node_modules/ts-standard/eslintrc.json"]
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json"
+    ]
   }
 }

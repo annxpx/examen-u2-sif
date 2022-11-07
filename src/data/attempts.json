@@ -2,7 +2,6 @@
     {
         "attempts" :  "4",
         "word" : "_ _ _ _ _ _",
-        "message" : "Inserte una letra",
-        "letter": " "
+        "message" : "Inserte una letra"
     }     
 ]

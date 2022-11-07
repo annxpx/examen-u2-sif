@@ -1,6 +1,6 @@
 class HangmanGame{
 
-    public remainingLetters: number;
+    public remainingAttempts: number;
     public diccionario = [];
     public AnswerArray = [];
     public word: string;
@@ -17,13 +17,17 @@ class HangmanGame{
         for(let i = 0; i < this.word.length; i++){
             this.AnswerArray[i]="_";
         }
-        this.remainingLetters = this.word.length;
+        this.remainingAttempts = this.CalcularIntentos(this.word);
+    }
+
+    public CalcularIntentos(word:string){
+        const attempts: number = Math.floor(word.length/2);
+        return(attempts);
     }
 
     public Juego(){
-        while(this.remainingLetters>0){
+        while(this.remainingAttempts>0){
             alert(this.AnswerArray.join(" "));
-            //console.log(ingrese la letra);
             let guess: string;
             if(guess == null){
                 break;
@@ -33,7 +37,7 @@ class HangmanGame{
                 for(let j = 0; j < this.word.length; j++){
                     if(this.word[j] === guess){
                         this.AnswerArray[j] = guess;
-                        this.remainingLetters--;
+                        this.remainingAttempts--;
                     }
                 }
             }

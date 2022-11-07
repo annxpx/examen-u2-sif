@@ -1,5 +1,6 @@
 
-import { getJustWords } from "../services/word.service";
+import { Word } from "../models/word.model";
+import { getJustWords, getWordById } from "../services/word.service";
 
 class HangmanGame{
 
@@ -14,12 +15,17 @@ class HangmanGame{
 
 
     public seleccionarPalabra(){
-        this.diccionario = getJustWords();
-        this.word = this.diccionario[Math.floor(Math.random() * this.diccionario.length)];
-        for(let i = 0; i < this.word.length; i++){
-            this.AnswerArray[i]="_";
-        }
-        this.remainingAttempts = this.CalcularIntentos(this.word);
+        let id = Math.floor(Math.random() * 100)
+        let flag = 0;
+        /*while(flag == 0){
+            this.word = getWordById(id);
+            console.log(this.word);
+            for(let i = 0; i < this.word.length; i++){
+                this.AnswerArray[i]="_";
+            }
+            this.remainingAttempts = this.CalcularIntentos(this.word);
+            flag = 1;
+        }*/
     }
 
     public CalcularIntentos(word:string){

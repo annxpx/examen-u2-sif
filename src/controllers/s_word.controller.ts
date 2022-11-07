@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { s_word, s_word_JSON} from "../models/attempt.model";
-import {getS_word, updateS_word} from "../services/s_word.service";
+import {getS_word, insertS_word} from "../services/s_word.service";
 
 export class S_WordController{
   router = Router();
@@ -20,7 +20,7 @@ async getS_word(_req: Request, res: Response) : Promise<Response>{
 }
 
 async updateS_word(_req: Request, res: Response) : Promise<Response>{
-  updateS_word(_req.body);
+  insertS_word(_req.body);
 
   return res.status(204).send("Attempt Send");
 }

@@ -1,3 +1,6 @@
+
+import { getJustWords } from "../services/word.service";
+
 class HangmanGame{
 
     public remainingAttempts: number;
@@ -9,10 +12,9 @@ class HangmanGame{
         this.seleccionarPalabra();
     }
 
+
     public seleccionarPalabra(){
-        this.diccionario = [
-            "manzana", "pera", "uva"
-        ];
+        this.diccionario = getJustWords();
         this.word = this.diccionario[Math.floor(Math.random() * this.diccionario.length)];
         for(let i = 0; i < this.word.length; i++){
             this.AnswerArray[i]="_";
@@ -44,3 +46,4 @@ class HangmanGame{
         }
     }
 }
+export default new HangmanGame();

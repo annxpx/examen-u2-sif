@@ -2,6 +2,7 @@ import fs from "fs";
 import {Word, Word_JSON} from '../models/word.model';
 import {dataPaths} from "../utils/paths";
 import {getCategoryById} from "../services/category.service";
+import { s_word, s_word_JSON } from "../models/attempt.model";
 
 export const getWords = (): Word[] => {
   const wordsJson: Word_JSON[] = getWordsJSON();
@@ -11,6 +12,16 @@ export const getWords = (): Word[] => {
       id: word.id,
       word: word.word,
       category: getCategoryById(word.categoryId) || { id: 0, name: "Unknown" },
+    };
+  });
+};
+
+export const getJustWords = (): s_word[] => {
+  const wordsJson: s_word_JSON[] = getWordsJSON();
+
+  return wordsJson.map((word: s_word_JSON) => {
+    return {
+      word: word.word
     };
   });
 };

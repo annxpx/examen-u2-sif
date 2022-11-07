@@ -10,7 +10,7 @@ export class S_WordController{
 }
 initRoutes(){
     this.router.get('/s_word', this.getS_word);
-    this.router.post('/s_word', this.updateS_word);
+    this.router.get('/s_word', this.updateS_word);
 
 }
 

@@ -26,5 +26,5 @@ import fs from "fs";
 
             const newAttempt = Object.assign(attemptJson, word);
           
-            fs.writeFileSync(path, JSON.stringify(newAttempt), { encoding: "utf-8", flag: "w+" });
+            fs.writeFileSync(path, JSON.stringify(newAttempt), { encoding: "utf-8"});
           };

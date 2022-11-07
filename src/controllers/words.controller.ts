@@ -31,28 +31,3 @@ async insertWord(_req: Request, res: Response) : Promise<Response>{
 }
 
 }
-
-/*const router = express.Router();
-
-router.get("/", (_req, res) => {
-  const words: Word[] = getWords();
-  res.send(words);
-});
-
-router.get("/:id", (_req, res) => {
-  const word: Word | undefined = getWordById(Number(_req.params.id));
-
-  if (!word) return res.status(404).send("Word not found");
-
-  return res.send(word);
-});
-
-router.post("/", (_req, res) => {
-  insertWord(_req.body);
-
-  return res.status(204).send("Word inserted");
-});
-
-
-
-export default router;*/

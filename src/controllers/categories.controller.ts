@@ -29,22 +29,3 @@ async getCaregories(_req: Request, res: Response) : Promise<Response>{
  
  
 }
-
-//const router = express.Router();
-
-/*router.get("/", (_req, res) => {
-  const categories: Category[] = getCategories();
-  res.send(categories);
-});
-
-router.get("/:id", (_req, res) => {
-  const category: Category | undefined = getCategoryById(
-    Number(_req.params.id)
-  );
-
-  if (!category) return res.status(404).send("Category not found");
-
-  return res.send(category);
-});
-
-export default router;*/

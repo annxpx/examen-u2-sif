@@ -3,6 +3,7 @@ import {Word, Word_JSON} from '../models/word.model';
 import {dataPaths} from "../utils/paths";
 import {getCategoryById} from "../services/category.service";
 import { s_word, s_word_JSON } from "../models/attempt.model";
+import { AutoIncrement } from "sequelize-typescript";
 
 export const getWords = (): Word[] => {
   const wordsJson: Word_JSON[] = getWordsJSON();
@@ -33,6 +34,8 @@ export const getWordById = (id: number): Word | undefined => {
 };
 
 export const insertWord = (word: Word_JSON): void => {
+  let id= AutoIncrement;
+  id : word.id;
   const path: string = dataPaths.words;
   const words: Word_JSON[] = getWordsJSON();
 

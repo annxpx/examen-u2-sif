@@ -1,4 +1,5 @@
-import { Router, Request, Response } from "express";import { Word } from "../models/word.model";
+import { Router, Request, Response } from "express";
+import { Word } from "../models/word.model";
 import {getWords,getWordById,insertWord,} from "../services/word.service";
 
 export class WordsController{

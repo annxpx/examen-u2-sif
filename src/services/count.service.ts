@@ -4,14 +4,7 @@ import { dataPaths } from "../utils/paths";
 import fs from "fs";
 
 
-export class CountingService{
-    constructor(){
-        let counter : Number;
-        this.getAttempt();
-    }
-
-    getAttempt(){
-        const getAttempt = (): Attempt[] =>{
+    export const getAttempt = (): Attempt[] =>{
             const path: string = dataPaths.attempts;
             const attemptJson: Attempt_JSON[] = JSON.parse(fs.readFileSync(path,"utf8"));
             return attemptJson.map((attempt: Attempt_JSON)=>{
@@ -24,10 +17,8 @@ export class CountingService{
                 };
             });
         };
-    }
 
-    updateAttempt(){
-            const updateAttempt = (word: Attempt_JSON): void => {
+        export const updateAttempt = (word: Attempt_JSON): void => {
             const path: string = dataPaths.attempts;
             const attemptJson: Attempt_JSON[] = JSON.parse(fs.readFileSync(path,"utf8"));
           
@@ -37,6 +28,3 @@ export class CountingService{
           
             fs.writeFileSync(path, JSON.stringify(newAttempt), { encoding: "utf-8", flag: "w+" });
           };
-    }
-
-}

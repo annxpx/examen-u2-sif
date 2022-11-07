@@ -1,15 +1,20 @@
 export interface Attempt_JSON {
-    palabra_0: string;
-    intentos: number;
-    palabra: string;
-    mensaje: string;
-    letra: string;
+    attempts: number;
+    word: string;
+    message: string;
+    letter: string;
   }
   
   export type Attempt ={
-    palabra_0: string;
-    intentos: number;
-    palabra: string;
-    mensaje: string;
-    letra: string;
+    attempts: number;
+    word: string;
+    message: string;
+    letter: string;
+  }
+  export interface s_word_JSON {
+    word: string;
+  }
+  
+  export type s_word ={
+    word: string;
   }

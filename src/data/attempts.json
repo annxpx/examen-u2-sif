@@ -1,9 +1,8 @@
 [
     {
-        "palabra_0" : "",
-        "intentos" :  "",
-        "palabra" : "",
-        "mensaje" : "Inserte una letra",
-        "letra": " "
-    }    
+        "attempts" :  "4",
+        "word" : "_ _ _ _ _ _",
+        "message" : "Inserte una letra",
+        "letter": " "
+    }     
 ]

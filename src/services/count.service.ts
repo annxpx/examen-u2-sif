@@ -1,4 +1,3 @@
-import {writeFileSync, readFileSync, appendFileSync} from "node:fs";
 import { Attempt, Attempt_JSON } from "../models/attempt.model";
 import { dataPaths } from "../utils/paths";
 import fs from "fs";
@@ -9,11 +8,10 @@ import fs from "fs";
             const attemptJson: Attempt_JSON[] = JSON.parse(fs.readFileSync(path,"utf8"));
             return attemptJson.map((attempt: Attempt_JSON)=>{
                 return{
-                    palabra_0: attempt.palabra_0,
-                    intentos: attempt.intentos,
-                    palabra: attempt.palabra,
-                    mensaje: attempt.mensaje,
-                    letra: attempt.letra
+                    attempts: attempt.attempts,
+                    word: attempt.word,
+                    message: attempt.message,
+                    letter: attempt.letter
                 };
             });
         };

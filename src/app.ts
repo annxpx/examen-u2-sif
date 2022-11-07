@@ -1,6 +1,8 @@
 import express,{json} from 'express' ;
 import {WordsController} from "./controllers/words.controller";
 import { CategoriesController } from './controllers/categories.controller';
+import { AttemptController } from './controllers/attempt.controller';
+import { S_WordController } from './controllers/s_word.controller';
 import 'dotenv/config';
 class App {
 
@@ -8,6 +10,8 @@ class App {
 
     categoriesController: CategoriesController;
     wordsController: WordsController;
+    attemptController: AttemptController;
+    s_WordController: S_WordController;
 
     constructor(){
         this.express = express();
@@ -22,7 +26,8 @@ class App {
     routes(){
         this.express.use('/api', this.categoriesController.router);
         this.express.use('/api', this.wordsController.router);
-
+        this.express.use('/api', this.attemptController.router);
+        this.express.use('/api', this.s_WordController.router);
     }
 
     listen(port: number) {
@@ -33,6 +38,8 @@ class App {
     controllers(){
         this.categoriesController = new CategoriesController();
         this.wordsController = new WordsController();
+        this.attemptController = new AttemptController();
+        this.s_WordController = new S_WordController();
     }
 
 }

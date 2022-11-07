@@ -1,7 +1,8 @@
-import { Router, Request, Response } from "express";
-import { Word } from "../models/word.model";
+import { Router, Request, Response } from "express";import { Word } from "../models/word.model";
 import {getWords,getWordById,insertWord,} from "../services/word.service";
-
+import {CreateWordsDtos} from "../models/word.model";
+import { plainToClass } from "class-transformer";
+import { validate } from "class-validator";
 export class WordsController{
   router = Router();
   constructor(){
@@ -26,8 +27,19 @@ async getWordById(_req: Request, res: Response) : Promise<Response>{
   return res.send(word);
 }
 async insertWord(_req: Request, res: Response) : Promise<Response>{
-  insertWord(_req.body);
-
+ 
+ const payload = _req.body;
+ let createWordsDtos = plainToClass(CreateWordsDtos, payload);
+        const errors = await validate(createWordsDtos);
+        if(errors.length > 0){
+          console.log(errors);
+          return res.status(400).json({
+              "Valdation-errors" : errors
+          });
+      }
+   //   return res.json(
+    //      await insertWord(payload));
+    insertWord(_req.body);
   return res.status(204).send("Word inserted");
 }
 

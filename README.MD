@@ -5,14 +5,14 @@
 1. Sary Stephany Noguera Peña
 2. Andrea Patricia Alvarado Lopez
 
-### Requirements:
+## Requirements:
 1. Insomnia
 2. npm
 3. express
 4. node
 5. sequelize
 
-### Methods based on Insomnia:
+## Methods based on Insomnia:
 
 1. getWords = http://localhost:XXXX/api/words
 2. insertWord = "id":1,"word":"carro","categoryId":1

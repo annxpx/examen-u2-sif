@@ -7,24 +7,12 @@ import { insertS_word} from "./s_word.service";
 import { json } from "sequelize";
 import { plainToClass } from "class-transformer";
 import s_wordJSON from '../data/s_word.json';
-import wordsJSON from '../data/words.json';
-
-//hangmanGame;
-
+import attemptsJSON from '../data/attempts.json';
 
 export const getAttempt = (): any =>{
-    const data = wordsJSON;
-    return data;
-    /*const path: string = dataPaths.attempts;
-    const attemptJson: Attempt_JSON[] = JSON.parse(fs.readFileSync(path,"utf8"));
-    if(attemptJson.find((a) => a.attempts !=0)){
-        return attemptJson.map((attempt: Attempt_JSON)=>{
-            return{
-                attempts: attempt.attempts,
-                word: attempt.word,
-                message: attempt.message,
-            };
-        });
+    const data = attemptsJSON;
+    if(data.find((a) => a.attempts !== "0")){
+        return data;
     }else{
         hangmanGame.seleccionarPalabra();
         const word = hangmanGame.word;
@@ -33,7 +21,7 @@ export const getAttempt = (): any =>{
         words.forEach(w => {
             w.word = word;
          });
-    }*/
+    }
 };
 
 

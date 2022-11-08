@@ -19,7 +19,6 @@
 3. getWordsById = http://localhost:XXXX/api/words/9
 4. getCategories = http://localhost:XXXX/api/categories
 5. getCategoriesById = http://localhost:XXXX/api/categories/1
-6. 
 
 
 ### References:

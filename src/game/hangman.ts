@@ -17,7 +17,7 @@ class HangmanGame{
     public seleccionarPalabra(){
         let id = Math.floor(Math.random() * 100)
         let flag = 0;
-        /*while(flag == 0){
+        while(flag == 0){
             this.word = getWordById(id);
             console.log(this.word);
             for(let i = 0; i < this.word.length; i++){
@@ -25,7 +25,7 @@ class HangmanGame{
             }
             this.remainingAttempts = this.CalcularIntentos(this.word);
             flag = 1;
-        }*/
+        }
     }
 
     public CalcularIntentos(word:string){

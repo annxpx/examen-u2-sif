@@ -6,6 +6,7 @@ import hangmanGame from "../game/hangman";
 import { insertS_word} from "./s_word.service";
 import { json } from "sequelize";
 import { plainToClass } from "class-transformer";
+import s_wordJSON from '../data/s_word.json';
 
 //hangmanGame;
 
@@ -23,7 +24,12 @@ export const getAttempt = (): Attempt[] =>{
         });
     }else{
         hangmanGame.seleccionarPalabra();
-        console.log(`la palabra es: ${hangmanGame.word}`);
+        const word = hangmanGame.word;
+        console.log(`la palabra es: ${word}`);
+        const words = s_wordJSON;
+        words.forEach(w => {
+            w.word = word;
+         });
     }
 };
 

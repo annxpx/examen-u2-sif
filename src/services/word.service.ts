@@ -27,10 +27,12 @@ export const getJustWords = (): s_word[] => {
   });
 };
 
-export const getWordById = (id: number): Word | undefined => {
-  return getWords().find(
+export const getWordById = (id: number): string=> {
+  const w = getWords().find(
     (word) => word.id === id
   );
+  if(w === undefined) return 'nothing';
+  return w.word
 };
 
 export const insertWord = (word: Word_JSON): void => {

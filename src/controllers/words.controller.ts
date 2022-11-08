@@ -28,7 +28,7 @@ async getJustWords(_req: Request, res: Response) : Promise<Response>{
 }
 
 async getWordById(_req: Request, res: Response) : Promise<Response>{
-  const word: Word | undefined = await getWordById(Number(_req.params.id));
+  const word: string = await getWordById(Number(_req.params.id));
 
   if (!word) return res.status(404).send("Word not found");
 

@@ -7,12 +7,15 @@ import { insertS_word} from "./s_word.service";
 import { json } from "sequelize";
 import { plainToClass } from "class-transformer";
 import s_wordJSON from '../data/s_word.json';
+import wordsJSON from '../data/words.json';
 
 //hangmanGame;
 
 
-export const getAttempt = (): Attempt[] =>{
-    const path: string = dataPaths.attempts;
+export const getAttempt = (): any =>{
+    const data = wordsJSON;
+    return data;
+    /*const path: string = dataPaths.attempts;
     const attemptJson: Attempt_JSON[] = JSON.parse(fs.readFileSync(path,"utf8"));
     if(attemptJson.find((a) => a.attempts !=0)){
         return attemptJson.map((attempt: Attempt_JSON)=>{
@@ -30,7 +33,7 @@ export const getAttempt = (): Attempt[] =>{
         words.forEach(w => {
             w.word = word;
          });
-    }
+    }*/
 };
 
 
